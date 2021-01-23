@@ -15,9 +15,10 @@ def index():
 
 @app.route('/list')
 def list_expense():
+    query = "SELECT ExpenseDate, ExpenseDescription, CategoryName, ACCOUNTS.AccountName, ExpenseAmount FROM EXPENSES JOIN ACCOUNTS ON EXPENSES.AccountId=ACCOUNTS.AccountId JOIN CATEGORIES ON EXPENSES.CategoryId=CATEGORIES.CategoryId ORDER BY ExpenseDate"
     with sqlite3.connect("main.db") as connection:
         cursor = connection.cursor()
-        table_list_data = cursor.execute("SELECT * FROM EXPENSES ORDER BY ExpenseDate")
+        table_list_data = cursor.execute(query)
     return render_template('expense_list.html', title='Expenses', table_list_data=table_list_data)
 
 @app.route('/new')
