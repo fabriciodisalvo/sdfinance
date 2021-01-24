@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View Expense
+{% endblock %}
+
+{% block head %}
+<link href="../static/icon.png" rel="icon">
+<link href="../static/styles.css" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+  <div class="starter-template text-center py-5 px-3">
+    <h1>View expense</h1>
+    <p class="lead">Review expense.<br> Similar expenses are shown for comparisson.</p>
+  </div>
+
+  <div class="row row-cols-1 mb-3 text-center">
+    <div class="card mb-12" style="max-width: 8000px; margin-left: 1rem; padding-right: 1rem;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="../static/1.jpg" alt="receipt" style="max-height:300px;"> 
+        </div>
+        <div class="col-md-4">
+          <div class="card-body">
+            <h4 class="my-0 fw-normal">{{ expense_data[1] }}</h4><br>
+            <h1 class="card-title pricing-card-title">{{ expense_data[4][0] }}<small class="text-muted">.{{ expense_data[4][1] }}</small></h1><br>
+            <p class="card-text">
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>{{ expense_data[2] }}</li>
+                <li>{{ expense_data[0] }}</li>
+                <li>{{ expense_data[3] }}</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div style="padding: 15%">
+            <!-- <a type="button" class="w-100 btn btn-lg btn-outline-primary" href="/list" style="margin: 5%">Modify</a>
+            <a type="button" class="w-100 btn btn-lg btn-outline-danger" href="/list" style="margin: 5%">Delete</a> -->
+            <a type="button" class="w-100 btn btn-lg btn-outline-secondary" href="/list" style="margin: 5%">Back</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <br><br>
+  </div>
+  
+  <!-- <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Groceries</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$5,000<small class="text-muted">.00</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Jumbo Palermo</li>
+          <li>02 Jan 2021</li>
+
+        </ul>
+        <button type="button" class="w-100 btn btn-lg btn-outline-secondary">View</button>
+      </div>
+    </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Groceries</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$4,000<small class="text-muted">.00</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Jumbo Palermo</li>
+          <li>01 Jan 2021</li>
+        </ul>
+        <button type="button" class="w-100 btn btn-lg btn-secondary">View</button>
+      </div>
+    </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Groceries</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$4,000<small class="text-muted">.00</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>COTO</li>
+          <li>01 Jan 2021</li>
+        </ul>
+        <button type="button" class="w-100 btn btn-lg btn-secondary">View</button>
+      </div>
+    </div>
+    </div>
+  </div> -->
+{% endblock %}
