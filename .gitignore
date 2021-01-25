@@ -2,7 +2,7 @@
 bin/
 *.cfg
 .vscode/
-
+other_untracked_resources/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
