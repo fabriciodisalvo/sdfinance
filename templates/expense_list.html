@@ -37,12 +37,12 @@
       <tbody id="searchable_table">
         {% for items in table_list_data %}
         <tr>
-          <th scope="row">{{ items[0] }}</th>
+          <td style="text-align: left;"><a href="/view/{{ items[5] }}" style="color: inherit; text-decoration: none;">{{ items[0] }}</a></td>
           <td style="text-align: left;"><a href="/view/{{ items[5] }}" style="color: inherit; text-decoration: none;">{{ items[1] }}</a></td>
           <td style="text-align: left;"><a href="/view/{{ items[5] }}" style="color: inherit; text-decoration: none;">{{ items[2] }}</a></td>
           <td style="text-align: left;"><a href="/view/{{ items[5] }}" style="color: inherit; text-decoration: none;">{{ items[3] }}</a></td>
           <td style="text-align: right;"><a href="/view/{{ items[5] }}" style="color: inherit; text-decoration: none;">{{ "%.2f"|format(items[4] * -1)}}</a></td>
-          <td class="text-success" style="text-align: left;"><a href="/view/{{ items[5] }}" style="color: inherit; text-decoration: none;">Ok</a></td>
+          <td class="text-success" style="text-align: center;"><a href="/view/{{ items[5] }}" style="color: inherit; text-decoration: none;">Ok</a></td>
         </tr>
         {% endfor %}
       </tbody>
@@ -54,11 +54,8 @@
     <input class="h7 col-md-6" id="st_" type="text" placeholder="Search here">
   </div>
 
-  <!-- Script for bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
   <!-- Script for dynamic tables -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="./static/table-tools.js"></script>  
+  <script src="./static/table-tools.js"></script>
 
 {% endblock %}
