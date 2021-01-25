@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add an Expense
+{% endblock %}
+
+{% block main %}
+  <div class="starter-template text-center py-5 px-3">
+    <h1>Add new expense</h1>
+    <p class="lead">Create a new expense registry.<br> All marked fields are mandatory.</p>
+  </div>
+
+  <form form action="/add" method="post" class="needs-validation" novalidate>
+    <div class="row g-3">
+      <div class="col-md-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" id="description" placeholder="Jumbo Palermo" value="" name="description" required>
+        <div class="invalid-feedback">
+          A description is required.
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input type="text" class="form-control" id="amount" placeholder="10,000.00" value=""  name="amount" required>
+        <div class="invalid-feedback">
+          An Amount is required.
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="category" class="form-label">Category</label>
+        <div class="input-group">
+          <span class="input-group-text">Expense\</span>
+          <input type="text" class="form-control" id="category" placeholder="Groceries"  name="category" required>
+        <div class="invalid-feedback">
+          A category is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="account" class="form-label">Account</label>
+        <div class="input-group">
+          <span class="input-group-text">Main\</span>
+          <input type="text" class="form-control" id="account" placeholder="Cash"  name="account" required>
+        <div class="invalid-feedback">
+          An account is required.
+          </div>
+        </div>
+      </div>
+    <hr class="my-4">
+
+    <button class="w-100 btn btn-secondary btn-lg" type="submit">Add expense</button>
+  </form>
+
+  <!-- Script for form validation tables -->
+  <script src="./static/form-validation.js"></script>
+{% endblock %}
