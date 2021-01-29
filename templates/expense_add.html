@@ -12,6 +12,14 @@
 
   <form form action="/add" method="post" class="needs-validation" novalidate>
     <div class="row g-3">
+      <div class="col-md-2">
+        <label for="date" class="form-label">Date</label>
+        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+        <div class="invalid-feedback">
+          A date is required.
+        </div>
+      </div>
+
       <div class="col-md-3">
         <label for="description" class="form-label">Description</label>
         <input type="text" class="form-control" id="description" placeholder="Jumbo Palermo" value="" name="description" required>
@@ -20,7 +28,7 @@
         </div>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-2">
         <label for="amount" class="form-label">Amount</label>
         <input type="text" class="form-control" id="amount" placeholder="1,000.00" value=""  name="amount" required>
         <div class="invalid-feedback">
@@ -43,7 +51,7 @@
         </div>
       </div> 
 
-      <div class="col-md-3">
+      <div class="col-md-2">
         <label for="account" class="form-label">Account</label>
         <div class="input-group">
           <span class="input-group-text">Main\</span>
@@ -61,7 +69,28 @@
 
     <button class="w-100 btn btn-secondary btn-lg" type="submit">Add expense</button>
   </form>
+  {% endblock %}
 
+  {% block foot %}
   <!-- Script for form validation tables -->
   <script src="./static/form-validation.js"></script>
-{% endblock %}
+  
+  <!-- Include Date Range Picker -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+  <script>
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.date input').length>0 ? $('.date input').parent() : "body";
+      date_input.datepicker({
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayBtn: "linked",
+        orientation: "bottom left",
+        todayHighlight: true,
+        autoclose: true,
+      })
+    })
+  </script>
+  {% endblock %}
