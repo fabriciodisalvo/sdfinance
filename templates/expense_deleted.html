@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View Expense
+{% endblock %}
+
+{% block head %}
+<link href="../static/icon.png" rel="icon">
+<link href="../static/styles.css" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+  <div class="starter-template text-center py-5 px-3">
+    <h1  class="text-danger" >Expense Deleted</h1>
+    <p class="lead">You have succesfully deleted the entry.<br>This cannot be undone.</p>
+  </div>
+
+  <div style="padding: 15%">
+    <a type="button" class="w-100 btn btn-lg btn-secondary" href="/list" style="margin: 5%">Back to List</a>
+  </div>
+  
+{% endblock %}
